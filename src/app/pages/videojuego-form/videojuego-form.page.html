@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{ id ? 'Editar Videojuego' : 'Nuevo Videojuego' }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label position="stacked">
+      Título
+    </ion-label>
+    <ion-input [(ngModel)]="videojuego.titulo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">
+      Plataforma
+    </ion-label>
+    <ion-input [(ngModel)]="videojuego.plataforma"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">
+      Precio
+    </ion-label>
+    <ion-input type="number" [(ngModel)]="videojuego.precio"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">
+      Stock
+    </ion-label>
+    <ion-input type="number" [(ngModel)]="videojuego.stock"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">
+      Categoría
+    </ion-label>
+    <ion-input [(ngModel)]="videojuego.categoria"></ion-input>
+  </ion-item>
+
+  <!-- Nuevo campo para URL del video -->
+  <ion-item>
+    <ion-label position="stacked">
+      URL del Video (YouTube o TikTok)
+    </ion-label>
+    <ion-input 
+      [(ngModel)]="videojuego.video_url"
+      placeholder="https://www.youtube.com/watch?v=... o https://www.tiktok.com/@...">
+    </ion-input>
+  </ion-item>
+
+  <ion-button expand="block" class="ion-margin-top" (click)="guardar()">
+    Guardar
+  </ion-button>
+
+</ion-content>
