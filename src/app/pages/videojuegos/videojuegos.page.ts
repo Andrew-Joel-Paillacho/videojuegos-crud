@@ -4,12 +4,14 @@ import {
   IonButton,
   IonFab, IonFabButton, IonLoading, IonAlert, IonCard, 
   IonCardContent, IonCardHeader, IonCardTitle,
-  IonCardSubtitle
+  IonCardSubtitle, IonIcon
 } from '@ionic/angular/standalone';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { VideojuegosService, Videojuego } from '../../services/videojuegosService';
 import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
+import { addIcons } from 'ionicons';
+import { gameControllerOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-videojuegos',
@@ -22,7 +24,7 @@ import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
     IonButton,
     IonFab, IonFabButton, IonLoading, IonAlert, 
     IonCard, IonCardContent, IonCardHeader, IonCardTitle,
-    IonCardSubtitle,
+    IonCardSubtitle, IonIcon,
     SafeUrlPipe
   ]
 })
@@ -35,7 +37,9 @@ export class VideojuegosPage implements OnInit {
   constructor(
     private videojuegosService: VideojuegosService,
     private router: Router
-  ) {}
+  ) {
+    addIcons({ gameControllerOutline });
+  }
 
   ngOnInit() {
     this.cargar();

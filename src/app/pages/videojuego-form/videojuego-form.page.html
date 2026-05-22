@@ -43,15 +43,54 @@
     <ion-input [(ngModel)]="videojuego.categoria"></ion-input>
   </ion-item>
 
-  <!-- Nuevo campo para URL del video -->
   <ion-item>
     <ion-label position="stacked">
       URL del Video (YouTube o TikTok)
     </ion-label>
     <ion-input 
       [(ngModel)]="videojuego.video_url"
-      placeholder="https://www.youtube.com/watch?v=... o https://www.tiktok.com/@...">
+      placeholder="https://www.youtube.com/watch?v=...">
     </ion-input>
+  </ion-item>
+
+  <!-- SECCIÓN PARA LA IMAGEN -->
+  <ion-item>
+    <ion-label position="stacked">Imagen del juego</ion-label>
+    <input 
+      type="file" 
+      accept="image/*"
+      (change)="onImageSelected($event)"
+    />
+    
+    <!-- Vista previa de la imagen nueva -->
+    <div *ngIf="imagenPreview" class="preview-container">
+      <img [src]="imagenPreview" class="image-preview" />
+    </div>
+    
+    <!-- Mostrar imagen existente -->
+    <div *ngIf="videojuego.imagen_url && !imagenPreview" class="preview-container">
+      <img [src]="videojuego.imagen_url" class="image-preview" />
+      <ion-button size="small" (click)="eliminarImagen()" color="danger" expand="block">
+        Eliminar imagen actual
+      </ion-button>
+    </div>
+  </ion-item>
+
+  <!-- SECCIÓN PARA EL AUDIO -->
+  <ion-item>
+    <ion-label position="stacked">Audio del juego</ion-label>
+    <input 
+      type="file" 
+      accept="audio/*"
+      (change)="onAudioSelected($event)"
+    />
+    
+    <div *ngIf="videojuego.audio_url" class="audio-container">
+      <audio controls [src]="videojuego.audio_url" class="audio-player"></audio>
+      <ion-button size="small" (click)="eliminarAudio()" color="danger" expand="block">
+        Eliminar audio actual
+      </ion-button>
+    </div>
   </ion-item>
 
   <ion-button expand="block" class="ion-margin-top" (click)="guardar()">

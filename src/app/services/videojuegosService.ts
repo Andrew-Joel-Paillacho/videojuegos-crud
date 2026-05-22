@@ -12,6 +12,7 @@ export interface Videojuego {
   categoria?: string;
   imagen_url?: string;
   video_url?: string;
+  audio_url?: string; 
 }
 
 @Injectable({
@@ -134,4 +135,38 @@ export class VideojuegosService {
 
     if (error) throw error;
   }
+
+  // ========== MÉTODOS DE STORAGE ==========
+
+  async subirArchivo(
+    bucket: string, 
+    ruta: string, 
+    archivo: File
+  ): Promise<string> {
+    const { data, error } = await this.supabase.storage
+      .from(bucket)
+      .upload(ruta, archivo, {
+        cacheControl: '3600',
+        upsert: true  // Sobrescribe si ya existe
+      });
+
+    if (error) throw error;
+    
+    // Obtener URL pública
+    const { data: urlData } = this.supabase.storage
+      .from(bucket)
+      .getPublicUrl(ruta);
+      
+    return urlData.publicUrl;
+  }
+
+  async eliminarArchivo(bucket: string, ruta: string): Promise<void> {
+    const { error } = await this.supabase.storage
+      .from(bucket)
+      .remove([ruta]);
+      
+    if (error) throw error;
+  }
+
+  
 }

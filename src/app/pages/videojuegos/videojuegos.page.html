@@ -23,14 +23,23 @@
 
     <ion-card class="juego-card" *ngFor="let juego of videojuegos">
 
-      <ion-card-header class="card-header-custom">
-        <ion-card-title class="card-title-custom">{{ juego.titulo }}</ion-card-title>
-        <ion-card-subtitle class="card-subtitle-custom">
-          {{ juego.plataforma }} • {{ juego.categoria || 'Sin categoría' }}
-        </ion-card-subtitle>
-      </ion-card-header>
+      <!-- Cabecera con imagen pequeña y título -->
+      <div style="display: flex; align-items: center; gap: 12px; padding: 12px;">
+        <!-- Imagen junto al título -->
+        <div *ngIf="juego.imagen_url" style="width: 120px; flex-shrink: 0; border-radius: 6px; overflow: hidden;">
+          <img [src]="juego.imagen_url" style="width: 100%; height: auto; display: block;" />
+        </div>
+        
+        <!-- Título y subtítulo junto a la imagen -->
+        <div style="flex: 1;">
+          <h2 style="margin: 0 0 4px 0; font-size: 18px; font-weight: bold;">{{ juego.titulo }}</h2>
+          <p style="margin: 0; font-size: 12px; color: #666;">
+            {{ juego.plataforma }} • {{ juego.categoria || 'Sin categoría' }}
+          </p>
+        </div>
+      </div>
 
-      <!-- Reproductor de video si existe URL -->
+      <!-- Video (si existe) -->
       <div *ngIf="juego.video_url" class="video-container">
         <iframe
           [src]="juego.video_url | safeUrl"
@@ -40,11 +49,18 @@
         </iframe>
       </div>
 
+      <!-- Reproductor de audio (si existe) -->
+      <div *ngIf="juego.audio_url" class="audio-container">
+        <audio controls [src]="juego.audio_url" class="audio-player"></audio>
+      </div>
+
+      <!-- Información de precio y stock -->
       <ion-card-content class="card-content-custom">
         <p class="dato-precio">💲 Precio: <strong>${{ juego.precio }}</strong></p>
         <p class="dato-stock">📦 Stock: <strong>{{ juego.stock }}</strong></p>
       </ion-card-content>
 
+      <!-- Botones de acción -->
       <div class="acciones-custom">
         <ion-button class="btn-editar" [routerLink]="['/videojuegos-form', juego.id]">
           Editar
@@ -55,6 +71,7 @@
       </div>
     </ion-card>
 
+    <!-- Mensaje cuando no hay videojuegos -->
     <ion-card *ngIf="videojuegos.length === 0" class="card-vacio">
       <ion-card-content class="no-data">
         No hay videojuegos disponibles
