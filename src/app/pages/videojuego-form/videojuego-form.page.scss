@@ -1,22 +1,118 @@
-.preview-container {
-  margin-top: 10px;
-  text-align: center;
-  width: 100%;
-  
-  .image-preview {
-    max-width: 200px;
-    max-height: 150px;
-    border-radius: 8px;
-    margin: 10px auto;
-  }
+/* ============================
+   FONDO GENERAL
+   ============================ */
+:host ::ng-deep ion-content {
+  --background: #000000 !important;
+  color: #ffffff !important;
 }
 
-.audio-container {
+/* ============================
+   TOOLBAR
+   ============================ */
+:host ::ng-deep ion-toolbar {
+  --background: #000 !important;
+  border-bottom: 2px solid #00e5d4;
+}
+
+:host ::ng-deep ion-title {
+  color: #ff2e2e !important;
+  font-weight: bold;
+  text-shadow: 0 0 6px #00e5d4;
+}
+
+/* ============================
+   ETIQUETAS DE INPUT
+   ============================ */
+:host ::ng-deep ion-label {
+  color: #00e5d4 !important;
+  font-weight: bold;
+}
+
+/* ============================
+   INPUTS
+   ============================ */
+:host ::ng-deep ion-input {
+  --color: #ffffff !important;
+}
+
+:host ::ng-deep ion-item {
+  --background: #111 !important;
+  border: 1px solid #00e5d4 !important;
   margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* ============================
+   BOTÓN GUARDAR
+   ============================ */
+ion-button {
+  --background: #ff2e2e !important;
+  --color: #ffffff !important;
+  font-weight: bold;
+  border: 2px solid #00e5d4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 229, 212, 0.7);
+}
+
+/* ============================
+   CONTENEDOR DE PREVIEW IMAGEN
+   ============================ */
+.preview-container {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-preview {
+  width: 160px;
+  max-height: 200px;
+  border: 2px solid #ff2e2e;
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 0 10px rgba(255, 46, 46, 0.7);
+}
+
+/* ============================
+   CONTENEDOR DE AUDIO
+   ============================ */
+.audio-container {
+  margin-top: 12px;
+}
+
+.audio-player {
   width: 100%;
-  
-  .audio-player {
-    width: 100%;
-    margin: 10px 0;
-  }
+  border-radius: 8px;
+  border: 2px solid #00e5d4;
+}
+
+/* Botones de eliminar */
+ion-button[color="danger"] {
+  --background: #ff2e2e !important;
+  --color: #fff !important;
+  border: 1px solid #00e5d4;
+  box-shadow: none;
+}
+
+/* Botón de cancelar circular */
+.btn-cancel {
+  --background: #ff2e2e !important; /* Rojo */
+  --color: #ffffff !important;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid #00e5d4; /* Turquesa */
+  box-shadow: 0 0 8px rgba(0, 229, 212, 0.5);
+}
+
+/* Quitar padding interno de IonButton */
+.btn-cancel::part(native) {
+  padding: 0 !important;
 }

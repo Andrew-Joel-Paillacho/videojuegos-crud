@@ -3,6 +3,12 @@
     <ion-title>
       {{ id ? 'Editar Videojuego' : 'Nuevo Videojuego' }}
     </ion-title>
+
+    <!-- Botón cancelar -->
+    <ion-button slot="end" class="btn-cancel" (click)="cancelar()">
+      x
+    </ion-button>
+
   </ion-toolbar>
 </ion-header>
 

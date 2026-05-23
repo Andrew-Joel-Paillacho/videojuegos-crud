@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar class="toolbar-custom">
-    <ion-title class="title-custom">Venta de Videojuegos</ion-title>
+    <ion-title class="title-custom">VideoGames Store</ion-title>
     <ion-button slot="end" class="btn-logout" (click)="logout()">
       Cerrar Sesión
     </ion-button>
@@ -25,7 +25,6 @@
 
       <!-- Cabecera con imagen pequeña y título -->
       <div style="display: flex; align-items: center; gap: 12px; padding: 12px;">
-        <!-- Imagen junto al título -->
         <div *ngIf="juego.imagen_url" style="width: 120px; flex-shrink: 0; border-radius: 6px; overflow: hidden;">
           <img [src]="juego.imagen_url" style="width: 100%; height: auto; display: block;" />
         </div>
@@ -87,3 +86,4 @@
   </ion-fab>
 
 </ion-content>
+

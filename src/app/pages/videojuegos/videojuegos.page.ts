@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  IonHeader, IonToolbar, IonTitle, IonContent,
-  IonButton,
+  IonHeader, IonToolbar, IonTitle, IonContent, IonButton,
   IonFab, IonFabButton, IonLoading, IonAlert, IonCard, 
-  IonCardContent, IonCardHeader, IonCardTitle,
-  IonCardSubtitle, IonIcon
+  IonCardContent,
 } from '@ionic/angular/standalone';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -16,6 +14,7 @@ import { gameControllerOutline } from 'ionicons/icons';
 @Component({
   selector: 'app-videojuegos',
   templateUrl: './videojuegos.page.html',
+  styleUrls: ['./videojuegos.page.scss'],
   standalone: true,
   imports: [
     CommonModule,
@@ -23,8 +22,7 @@ import { gameControllerOutline } from 'ionicons/icons';
     IonHeader, IonToolbar, IonTitle, IonContent,
     IonButton,
     IonFab, IonFabButton, IonLoading, IonAlert, 
-    IonCard, IonCardContent, IonCardHeader, IonCardTitle,
-    IonCardSubtitle, IonIcon,
+    IonCard, IonCardContent, 
     SafeUrlPipe
   ]
 })
@@ -82,4 +80,5 @@ export class VideojuegosPage implements OnInit {
   async logout() {
     await this.videojuegosService.logout();
   }
+  
 }

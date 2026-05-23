@@ -1,43 +1,43 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Login Supabase</ion-title>
+<ion-header class="header-custom">
+  <ion-toolbar class="toolbar-custom">
+    <ion-title class="title-custom">VideoGames Store</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="login-background">
 
-  <ion-card>
-    <ion-card-content>
+  <div class="login-container">
 
-      <ion-item>
-        <ion-label position="floating">Correo</ion-label>
-        <ion-input
-          type="email"
-          [(ngModel)]="email">
-        </ion-input>
-      </ion-item>
+    <ion-card class="login-card">
+      <ion-card-content>
 
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input
-          type="password"
-          [(ngModel)]="password">
-        </ion-input>
-      </ion-item>
+        <h2 class="welcome-text">Iniciar Sesión</h2>
 
-      <ion-button expand="block" class="ion-margin-top" (click)="login()">
-        Iniciar sesión
-      </ion-button>
+        <ion-item class="input-custom">
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
 
-      <ion-button expand="block" fill="outline" (click)="register()">
-        Registrarse
-      </ion-button>
+        <ion-item class="input-custom">
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
 
-      <ion-text color="danger" *ngIf="mensaje">
-        <p>{{ mensaje }}</p>
-      </ion-text>
+        <ion-button expand="block" class="btn-login" (click)="login()">
+          Iniciar sesión
+        </ion-button>
 
-    </ion-card-content>
-  </ion-card>
+        <ion-button expand="block" fill="outline" class="btn-register" (click)="register()">
+          Registrarse
+        </ion-button>
+
+        <ion-text color="danger" *ngIf="mensaje">
+          <p class="error-text">{{ mensaje }}</p>
+        </ion-text>
+
+      </ion-card-content>
+    </ion-card>
+
+  </div>
 
 </ion-content>

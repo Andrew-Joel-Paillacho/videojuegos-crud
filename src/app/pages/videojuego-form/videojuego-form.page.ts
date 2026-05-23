@@ -6,15 +6,18 @@ import {
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VideojuegosService, Videojuego } from '../../services/videojuegosService';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-videojuego-form',
   templateUrl: './videojuego-form.page.html',
   standalone: true,
+  styleUrl: './videojuego-form.page.scss',
   imports: [
     FormsModule,
     IonHeader, IonToolbar, IonTitle, IonContent,
-    IonItem, IonLabel, IonInput, IonButton
+    IonItem, IonLabel, IonInput, IonButton,
+    CommonModule
   ]
 })
 export class VideojuegoFormPage implements OnInit {
@@ -119,4 +122,9 @@ export class VideojuegoFormPage implements OnInit {
 
     this.router.navigate(['/videojuegos']);
   }
+
+  cancelar() {
+    this.router.navigate(['/videojuegos']);
+  }
+
 }

@@ -1,0 +1,94 @@
+/* Fondo general */
+.login-background {
+  --background: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Encabezado */
+.header-custom {
+  --background: #000000;
+}
+
+.toolbar-custom {
+  --background: transparent;
+  color: #00e5ff;
+  border-bottom: 1px solid #ff0033;
+}
+
+.title-custom {
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #00e5ff;
+  letter-spacing: 1px;
+}
+
+/* Contenedor principal */
+.login-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Tarjeta del login */
+.login-card {
+  width: 90%;
+  max-width: 380px;
+  background: #111;
+  border: 1px solid #ff0033;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+/* Texto de bienvenida */
+.welcome-text {
+  text-align: center;
+  color: #00e5ff;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Inputs personalizados */
+.input-custom {
+  --background: #1a1a1a;
+  --color: white;
+  --border-color: #00e5ff;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.input-custom .label-floating {
+  color: #00e5ff !important;
+}
+
+/* Botón de login */
+.btn-login {
+  margin-top: 25px;
+  --background: #ff0033;
+  --background-hover: #cc0029;
+  --color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  letter-spacing: 1px;
+}
+
+/* Botón de registro */
+.btn-register {
+  margin-top: 10px;
+  --border-color: #00e5ff;
+  --color: #00e5ff;
+  border-radius: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Texto de error */
+.error-text {
+  color: #ff0033;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}

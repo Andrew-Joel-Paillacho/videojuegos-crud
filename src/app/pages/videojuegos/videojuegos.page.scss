@@ -1,201 +1,70 @@
-.imagen-container {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  
-  .juego-imagen {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+/* ============================
+   FONDO GENERAL DEL CONTENIDO
+   ============================ */
+:host ::ng-deep ion-content {
+  --background: #000000 !important;
+  color: #ffffff !important;
 }
 
-.audio-container {
-  padding: 12px;
-  
-  .audio-player {
-    width: 100%;
-  }
+/* ============================
+   TOOLBAR
+   ============================ */
+:host ::ng-deep ion-toolbar {
+  --background: #000 !important;
+  border-bottom: 2px solid #00e5d4;
 }
 
-.preview-container {
-  margin-top: 10px;
-  text-align: center;
-  
-  .image-preview {
-    max-width: 200px;
-    max-height: 150px;
-    border-radius: 8px;
-  }
+.title-custom {
+  color: #ff2e2e !important;
+  text-shadow: 0 0 6px #00e5d4;
 }
 
-// Estilos para la cabecera con imagen miniatura
-.card-header-flex {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px;
-  background: transparent;
+/* ============================
+   BOTÓN CERRAR SESIÓN
+   ============================ */
+.btn-logout {
+  --background: hsl(0, 73%, 40%) !important;
+  --color: #ffffff !important;
 }
 
-// Contenedor de la imagen miniatura
-.imagen-miniatura {
-  width: 20px;
-  height: 20px;
-  border-radius: 2x;
-  overflow: hidden;
-  flex-shrink: 0;
-  background: #f0f0f0;
-  
-  .juego-imagen-mini {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.btn-logout::part(native) {
+  color: #ffffff !important;
 }
 
-// Estilo cuando no hay imagen (icono por defecto)
-.imagen-miniatura-default {
-  width: 20px;
-  height: 20px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  
-  .icono-default {
-    font-size: 32px;
-    color: white;
-  }
-}
-
-// Texto del header
-.header-text {
-  flex: 1;
-  
-  .juego-titulo {
-    margin: 0 0 4px 0;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .juego-plataforma {
-    margin: 0;
-    font-size: 12px;
-    color: #666;
-  }
-}
-
-// Contenedor del video (16:9)
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* Ratio 16:9 */
-  background-color: #000;
-  
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-}
-
-// Contenedor del audio
-.audio-container {
-  padding: 12px 16px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  margin: 8px 16px;
-  
-  .audio-player {
-    width: 100%;
-  }
-}
-
-// Contenido de la tarjeta (precio y stock)
-.card-content-custom {
-  padding: 12px 16px;
-  
-  .dato-precio, .dato-stock {
-    margin: 8px 0;
-    font-size: 14px;
-  }
-  
-  .dato-precio {
-    color: #2ecc71;
-  }
-  
-  .dato-stock {
-    color: #3498db;
-  }
-}
-
-// Botones de acción
-.acciones-custom {
-  display: flex;
-  gap: 8px;
-  padding: 12px 16px;
-  border-top: 1px solid #eee;
-  
-  ion-button {
-    flex: 1;
-    margin: 0;
-    
-    &.btn-editar {
-      --background: #3498db;
-      --background-activated: #2980b9;
-    }
-    
-    &.btn-eliminar {
-      --background: #e74c3c;
-      --background-activated: #c0392b;
-    }
-  }
-}
-
-// Estilos generales de la tarjeta
+/* ============================
+   TARJETAS
+   ============================ */
 .juego-card {
-  margin: 16px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  
-  &:hover {
-    transform: translateY(-2px);
-    transition: transform 0.2s;
-  }
+  background: #111 !important;
+  box-shadow: 0 0 12px rgba(0, 229, 212, 0.6);
 }
 
-// Mensaje cuando no hay datos
-.card-vacio {
-  text-align: center;
-  padding: 40px;
-  
-  .no-data {
-    color: #999;
-    font-size: 16px;
-  }
+/* AUDIO */
+.audio-player {
+  width: 100%;
+  border-radius: 8px;
 }
 
-// Responsive para móviles
-@media (max-width: 768px) {
-  .card-header-flex {
-    padding: 12px;
-    
-    .imagen-miniatura,
-    .imagen-miniatura-default {
-      width: 50px;
-      height: 50px;
-    }
-    
-    .header-text .juego-titulo {
-      font-size: 16px;
-    }
-  }
+/* PRECIO Y STOCK */
+.card-content-custom {
+  background: #0d0d0d !important;
+}
+
+.dato-precio strong {
+  color: #00e2d4 !important;
+}
+
+.dato-stock strong {
+  color: #00e2d4 !important;
+}
+
+/* BOTONES */
+.btn-editar {
+  --background: #00e5d4 !important;
+  --color: #000 !important;
+}
+
+.btn-eliminar {
+  --background: #ff2e2e !important;
+  --color: #fff !important;
 }
